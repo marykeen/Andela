@@ -9,15 +9,20 @@
 <div>
 <h1><a href="">KEEN'S BLOG</a></h1>
 </div>
+{% for post in posts %}
+    {{ post }}
+{% endfor %}
 <div>
-<p>published September 10, 2016 3:15pm</p>
-<h2><a href=""></a>My first post</h2>
-<p>Today is Saturday. Right now, we are at Andela's Rooftop, a.k.a. Andela Amity Campus, Yaba. Feels good to be here!</p>
+    <h1><a href="/">Keen Blog</a></h1>
 </div>
-<div>
-	<p>published September 10, 2016 3:30pm</p>
-<h2><a href=""></a>My second post</h2>
-<p>Hanging out now with coach Mayowa, who is taking us through the Django tutorials. Thumbs up coach!</p>
-</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
 	</body>
 </html>
